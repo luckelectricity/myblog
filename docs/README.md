@@ -1,5 +1,5 @@
 ---
-title: 为什么要写Blog？
+title: 说服自己写blog
 author: luckelectricity
 date: '2022-11-04'
 ---
