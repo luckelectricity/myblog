@@ -1,7 +1,6 @@
 module.exports = {
   title: '我的博客',
   description: '技术&生活，不拘泥于形式',
-  theme: 'reco',
   base: '/myblog/',
   locales: {
     '/': {
@@ -9,54 +8,70 @@ module.exports = {
     }
   },
   themeConfig: {
-    subSidebar: 'auto',
-    // 博客配置
-    blogConfig: {
-      category: {
-        location: 2,     // 在导航栏菜单中所占的位置，默认2
-        text: 'Category' // 默认文案 “分类”
+    nav: [
+      // 跳转站内页面
+      { text: '导读', link: '/about/' },
+      // 嵌套导航
+      {
+        text: 'FE',
+        items: [
+          {
+            text: 'javaScript',
+            items: [
+              { text: '111', link: '/fe/JavaScript/1/' },
+              { text: '222', link: '/fe/JavaScript/2/' }
+            ]
+          },
+          {
+            text: 'TypeScript',
+            items: [
+              { text: '111', link: '/fe/TypeScript/1/' },
+              { text: '222', link: '/fe/TypeScript/2/' }
+            ]
+          }
+        ]
       },
-      tag: {
-        location: 3,     // 在导航栏菜单中所占的位置，默认3
-        text: 'Tag'      // 默认文案 “标签”
-      },
-      socialLinks: [     // 信息栏展示社交信息
-        { icon: 'reco-github', link: 'https://github.com/recoluan' },
-        { icon: 'reco-npm', link: 'https://www.npmjs.com/~reco_luan' }
-      ],
-      nav: [
-        { text: "首页", link: "/" },
-        {
-          text: "luckelectricity 的博客",
-          // items: [
-          // ]
-        }
-      ],
-      sidebar: [
-        {
-          title: "my blog",
-          path: "/",
-          collapsable: false,  // 是否折叠
-          children: [{ title: "博客简介", path: "/" }]
-        },
-        {
-          title: "技术",
-          path: "/fe/JavaScript/1",
-          collapsable: true,
-          children: [
-            { title: "JavaScript", path: "/fe/JavaScript/1" },
-            { title: "TypeScript", path: "/fe/TypeScript/1" }
-          ]
-        },
-        {
-          title: "英语",
-          path: "/English/1",
-          collapsable: true,
-          children: [
-            { title: "English", path: "/English/1" }
-          ]
-        }
+      // 跳转站外地址
+      // { text: '数据结构与算法', link: 'https://leetcode-cn.com/' },
+    ],
+    sidebar: {
+      "/fe/JavaScript/": getBarXXX()
+    },
+  }
+}
+// 页面组的侧边栏
+function getBarXXX () {
+  return [
+    {
+      title: 'LeetCode专栏',
+      collapsable: false,
+      sidebarDepth: 0,
+      children: [
+        "read.md"
+      ]
+    },
+    {
+      title: '数组',
+      collapsable: false,
+      sidebarDepth: 0,
+      children: [
+        "array/14.最长公共前缀.md",
+        "array/26.删除有序数组中的重复项.md",
+        "array/27.移除元素.md",
+        "array/35.搜索插入位置.md",
+        "array/66.加一.md",
+        "array/88.合并两个有序数组.md"
+      ]
+    },
+    {
+      title: '动态规划',
+      collapsable: false,
+      sidebarDepth: 0,
+      children: [
+        "dp/118.杨辉三角.md",
+        "dp/119.杨辉三角 II.md",
+        "dp/121.买股票的最佳时机.md"
       ]
     }
-  }
+  ]
 }
