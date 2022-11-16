@@ -18,8 +18,8 @@ module.exports = {
           {
             text: 'javaScript',
             items: [
-              { text: '111', link: '/fe/JavaScript/1/' },
-              { text: '222', link: '/fe/JavaScript/2/' }
+              { text: 'toFixed', link: '/fe/JavaScript/toFixed/' },
+              { text: '111', link: '/fe/JavaScript/1/' }
             ]
           },
           {
